@@ -1,5 +1,9 @@
 # Changelog
 
+## UNRELEASED
+
+- Add `neon-auth`, `neon-serverless`, and `neon-drizzle` resources
+
 ## [0.3.0] - 2025-03-14
 
 - Add `provision_neon_auth` tool

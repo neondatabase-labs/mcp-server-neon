@@ -40,7 +40,7 @@
     "@types/node": "20.17.9",
     "@types/node-fetch": "2.6.12",
     "autoevals": "0.0.111",
-    "braintrust": "0.0.177",
+    "braintrust": "0.0.193",
     "bun": "1.1.40",
     "eslint": "9.21.0",
     "eslint-config-prettier": "10.0.2",

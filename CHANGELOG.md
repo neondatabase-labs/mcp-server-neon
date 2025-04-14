@@ -3,6 +3,7 @@
 ## UNRELEASED
 
 - Fix default database name or role name assumptions.
+- Feature: Support for remote MCP with OAuth flow.
 
 ## [0.3.4] - 2025-03-26
 

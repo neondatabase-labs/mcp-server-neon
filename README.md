@@ -28,8 +28,7 @@ For example, in Claude Desktop, or any MCP Client, you can use natural language 
 - `Can you give me a summary of all of my Neon projects and what data is in each one?`
 
 > [!NOTE]  
-> The Neon MCP server grants powerful database management capabilities through natural language requests.  **Always review and authorize actions** requested by the LLM before execution. Ensure that only authorized users and applications have access to the Neon MCP server and Neon API keys.
-
+> The Neon MCP server grants powerful database management capabilities through natural language requests. **Always review and authorize actions** requested by the LLM before execution. Ensure that only authorized users and applications have access to the Neon MCP server and Neon API keys.
 
 ## Setting up Neon MCP Server
 
@@ -58,11 +57,7 @@ Connect to Neon's managed MCP server using OAuth for authentication. This is the
     "mcpServers": {
       "Neon": {
         "command": "npx",
-        "args": [
-          "-y",
-          "mcp-remote",
-          "https://mcp.neon.tech/sse"
-        ]
+        "args": ["-y", "mcp-remote", "https://mcp.neon.tech/sse"]
       }
     }
   }
@@ -84,13 +79,14 @@ npx -y @smithery/cli@latest install neon --client <client_name>
 
 You will be prompted to enter your Neon API key. Enter the API key which you obtained from the [prerequisites](#prerequisites) section
 Replace `<client_name>` with the name of your MCP client application. Supported client names include:
-  - `claude` for [Claude Desktop](https://claude.ai/download)
-  - `cursor` for [Cursor](https://cursor.com) (Installing via `smithery` makes the MCP server a global MCP server in Cursor)
-  - `windsurf` for [Windsurf Editor](https://codeium.com/windsurf)
-  - `roo-cline` for [Roo Cline VS Code extension](https://github.com/RooVetGit/Roo-Code)
-  - `witsy` for [Witsy](https://witsyai.com/)
-  - `enconvo` for [Enconvo](https://www.enconvo.com/)
-  - `vscode` for [Visual Studio Code (Preview)](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
+
+- `claude` for [Claude Desktop](https://claude.ai/download)
+- `cursor` for [Cursor](https://cursor.com) (Installing via `smithery` makes the MCP server a global MCP server in Cursor)
+- `windsurf` for [Windsurf Editor](https://codeium.com/windsurf)
+- `roo-cline` for [Roo Cline VS Code extension](https://github.com/RooVetGit/Roo-Code)
+- `witsy` for [Witsy](https://witsyai.com/)
+- `enconvo` for [Enconvo](https://www.enconvo.com/)
+- `vscode` for [Visual Studio Code (Preview)](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
 Restart your MCP client after installation.
 
@@ -105,7 +101,12 @@ Add the following JSON configuration within the `mcpServers` section of your cli
   "mcpServers": {
     "neon": {
       "command": "npx",
-      "args": ["-y", "@neondatabase/mcp-server-neon", "start", "<YOUR_NEON_API_KEY>"]
+      "args": [
+        "-y",
+        "@neondatabase/mcp-server-neon",
+        "start",
+        "<YOUR_NEON_API_KEY>"
+      ]
     }
   }
 }
@@ -123,13 +124,19 @@ npx -y @neondatabase/mcp-server-neon start <YOUR_NEON_API_KEY>
 
 If you are using Windows and encounter issues while adding the MCP server, you might need to use the Command Prompt (`cmd`) or Windows Subsystem for Linux (`wsl`) to run the necessary commands. Your configuration setup may resemble the following:
 
-
 ```json
 {
   "mcpServers": {
     "neon": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@neondatabase/mcp-server-neon", "start", "<YOUR_NEON_API_KEY>"]
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@neondatabase/mcp-server-neon",
+        "start",
+        "<YOUR_NEON_API_KEY>"
+      ]
     }
   }
 }
@@ -140,7 +147,13 @@ If you are using Windows and encounter issues while adding the MCP server, you m
   "mcpServers": {
     "neon": {
       "command": "wsl",
-      "args": ["npx", "-y", "@neondatabase/mcp-server-neon", "start", "<YOUR_NEON_API_KEY>"]
+      "args": [
+        "npx",
+        "-y",
+        "@neondatabase/mcp-server-neon",
+        "start",
+        "<YOUR_NEON_API_KEY>"
+      ]
     }
   }
 }
@@ -189,6 +202,7 @@ The Neon MCP Server provides the following actions, which are exposed as "tools"
 - **`complete_database_migration`**: Finalizes and applies a prepared database migration to the main branch. This action merges changes from the temporary migration branch and cleans up temporary resources.
 
 **Neon Auth:**
+
 - `provision_neon_auth`: Action to provision Neon Auth for a Neon project. It allows developers to easily setup authentication infrastructure by creating a integration with Stack Auth (`@stackframe/stack`).
 
 ## Migrations

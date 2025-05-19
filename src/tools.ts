@@ -360,7 +360,6 @@ export const NEON_TOOLS = [
         export const config = { matcher: '/protected/:path*' };
         \`\`\`
       
-      \`\`\`
       ## Examples
       ### Example: custom-profile-page
       #### Task

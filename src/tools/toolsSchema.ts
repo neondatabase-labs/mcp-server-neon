@@ -334,3 +334,12 @@ export const resetFromParentInputSchema = z.object({
       'Optional name to preserve the current state under a new branch before resetting',
     ),
 });
+
+export const searchInputSchema = z.object({
+  query: z
+    .string()
+    .min(3)
+    .describe(
+      'The search query to find matching organizations, projects, or branches',
+    ),
+});

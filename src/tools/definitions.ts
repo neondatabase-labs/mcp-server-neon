@@ -23,6 +23,7 @@ import {
   listOrganizationsInputSchema,
   listSharedProjectsInputSchema,
   resetFromParentInputSchema,
+  searchInputSchema,
 } from './toolsSchema.js';
 
 export const NEON_TOOLS = [
@@ -607,5 +608,10 @@ export const NEON_TOOLS = [
     name: 'list_branch_computes' as const,
     description: 'Lists compute endpoints for a project or specific branch',
     inputSchema: listBranchComputesInputSchema,
+  },
+  {
+    name: 'search' as const,
+    description: `Searches across all user organizations, projects, and branches that match the query. Returns a list of objects with id, title, and url. Each result includes its type (organization, project, or branch) and parent information when applicable. This tool searches through all accessible resources and provides direct links to the Neon Console.`,
+    inputSchema: searchInputSchema,
   },
 ];

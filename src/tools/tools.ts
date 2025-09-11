@@ -1291,7 +1291,7 @@ export const NEON_HANDLERS = {
   },
 
   describe_branch: async ({ params }, neonClient, extra) => {
-    const result = await handleDescribeBranch(
+    return await handleDescribeBranch(
       {
         projectId: params.projectId,
         branchId: params.branchId,
@@ -1300,16 +1300,6 @@ export const NEON_HANDLERS = {
       neonClient,
       extra,
     );
-    return {
-      content: [
-        {
-          type: 'text',
-          text: ['Database Structure:', JSON.stringify(result, null, 2)].join(
-            '\n',
-          ),
-        },
-      ],
-    };
   },
 
   delete_branch: async ({ params }, neonClient) => {
